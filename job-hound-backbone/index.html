@@ -10,7 +10,8 @@
     <script src="js/app.js"></script>
     <script src="js/backbone/models/job.js"></script>
     <script src="js/backbone/collections/jobs.js"></script>
-    <script src="js/backbone/views/"></script>
+    <script src="js/backbone/views/job.js"></script>
+    <script src="js/backbone/views/jobList.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -18,8 +19,44 @@
     </nav>
 
     <main>
-      <h1>Jobs go here</h1>
+      <h1>Applications You're Tracking</h1>
+      <div class="table-container">
+        <div class="heading">
+          <h1 class="col">Company</h1>
+          <h1 class="col">Title</h1>
+          <h1 class="col">Date Applied</h1>
+          <h1 class="col">Date Heard Back</h1>
+          <h1 class="col">Phone Interview Date</h1>
+          <h1 class="col">Interview Date</h1>
+        </div>
+      </div>
     </main>
+
+    <script id="JobTemplate" type="text/x-handlebars-template">
+
+      <div class="col">
+        <p>{{company}}</p>
+      </div>
+      <div class="col">
+        <p>{{title}}</p>
+      </div>
+      <div class="col">
+        <p>{{date_applied}}</p>
+      </div>
+      <div class="col">
+        <p>{{date_replied}}</p>
+      </div>
+      <div class="col">
+        <p>{{phone_interview}}</p>
+      </div>
+      <div class="col">
+        <p>{{interview}}</p>
+      </div>
+      <div class="col">
+        <p>edit</p>
+      </div>
+
+    </script>
 
   </body>
 </html>
