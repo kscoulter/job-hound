@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Job Hound</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
     <script src="bower_components/handlebars/handlebars.min.js"></script>
@@ -12,6 +13,7 @@
     <script src="js/backbone/collections/jobs.js"></script>
     <script src="js/backbone/views/job.js"></script>
     <script src="js/backbone/views/jobList.js"></script>
+    <script src="js/backbone/views/addJob.js"></script>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -30,7 +32,35 @@
           <h1 class="col">Interview Date</h1>
         </div>
       </div>
+
+      <div class="add">Add Job</div>
+
+      <div id="newJobForm">
+        <form>
+          <p><label for="company">Company</label></p>
+          <p><input type="text" name="company" placeholder="Monster's Inc."></p>
+          <p><label for="title">Title</label></p>
+          <p><input type="text" name="title" placeholder="Intern"></p>
+          <p><label for="link">Link to Application</label></p>
+          <p><input type="text" name="link" placeholder="http://"></p>
+          <p><label for="date_applied">Date Applied</label></p>
+          <p><input type="date" name="date_applied"></p>
+          <p><label for="date_replied">Date Heard Back</label></p>
+          <p><input type="date" name="date_replied"></p>
+          <p><label for="phone_interview">Phone Interview Date</label></p>
+          <p><input type="date" name="phone_interview"></p>
+          <p><label for="interview">Interview Date</label></p>
+          <p><input type="date" name="interview"></p>
+          <p><label for="notes">Notes</label></p>
+          <p><input type="textbox" name="notes" placeholder="They allow pets"></p>
+          <p><input type="submit"></p>
+        </form>
+      </div>
     </main>
+
+    <script id="addJobTemplate" type="text/x-handlebars-template">
+      </script>
+
 
     <script id="JobTemplate" type="text/x-handlebars-template">
 
@@ -52,11 +82,54 @@
       <div class="col">
         <p>{{interview}}</p>
       </div>
-      <div class="col">
-        <p>edit</p>
+      <div class="edit col">
+        <i class="fa fa-pencil"></i>
       </div>
 
     </script>
+
+      <script id="JobEdit" type="text/x-handlebars-template">
+        <form>
+          <div class="col">
+            <p><input type="text" name="company" value="{{ company }}"></p>
+          </div>
+        </form>
+
+        <form>
+          <div class="col">
+            <p><input type="text" name="title" value="{{ title }}"></p>
+          </div>
+        </form>
+
+        <form>
+          <div class="col">
+              <p><input type="date" name="date_applied" value="{{ date_applied }}"></p>
+          </div>
+        </form>
+
+        <form>
+          <div class="col">
+            <p><input type="date" name="date_replied" value="{{ date_replied }}"></p>
+          </div>
+        </form>
+
+        <form>
+          <div class="col">
+            <p><input type="date" name="phone_interview" value="{{ phone_interview }}"></p>
+          </div>
+        </form>
+
+        <form>
+          <div class="col">
+            <p><input type="date" name="interview" value="{{ interview }}"></p>
+          </div>
+        </form>
+
+          <div class="edit col">
+            <i class="fa fa-pencil"></i>
+          </div>
+
+      </script>
 
   </body>
 </html>

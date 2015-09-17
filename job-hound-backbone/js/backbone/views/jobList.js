@@ -1,16 +1,14 @@
-App.Views.SongList = Backbone.View.extend({
-  el: ".table-container",
-  views: [],
+App.Views.JobList = Backbone.View.extend({
+  el: "main",
 
-  initialize: function(){
-    this.listenTo(this.collection, 'reset', this.renderAll);
-    this.listenTo(this.collection, 'add', this.renderOne);
+  events: {
+    'click .add': 'toggleForm'
   },
 
-  renderOne: function(job){
-    var view = new App.Views.Job({model: job});
-    this.views.push(view);
-    this.$el.prepend(view.$el);
+  initialize: function(){
+    console.log("job list initialized");
+    this.listenTo(this.collection, 'reset', this.renderAll);
+    this.listenTo(this.collection, 'add', this.renderOne);
   },
 
   renderAll: function(){
@@ -18,4 +16,12 @@ App.Views.SongList = Backbone.View.extend({
     this.collection.each(this.renderOne.bind(this));
   },
 
+  renderOne: function(job) {
+    var view = new App.Views.Job({ model: job });
+    this.$(".table-container").append(view.$el);
+  },
+
+  toggleForm: function(){
+    $("#newJobForm").toggle()
+  }
 })

@@ -7,11 +7,8 @@ App = {
 
 $(document).ready(function(){
   jobs = new App.Collections.Jobs();
+  var jobList = new App.Views.JobList({collection: jobs});
+  jobs.fetch()
 
-  jobs.fetch().then(function(newJobs){
-    jobs.models.forEach(function(job){
-      var jobView = new App.Views.Job({model: job});
-      $(".table-container").append(jobView.$el)
-    })
-  })
+  new App.Views.AddJob({collection: jobs})
 });

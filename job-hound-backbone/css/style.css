@@ -40,3 +40,15 @@ main {
   display: block;
   width: 100%;
 }
+form {
+  display: table-cell;
+}
+.add {
+  background-color: green;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+#newJobForm{
+  display: none;
+}
