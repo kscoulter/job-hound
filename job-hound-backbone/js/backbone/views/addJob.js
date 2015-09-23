@@ -12,7 +12,6 @@ App.Views.AddJob = Backbone.View.extend({
 
   submitForm: function(){
     event.preventDefault();
-    console.log("you submitted a form");
     var formData = {
       company: this.$("[name='company']").val(),
       title: this.$("[name='title']").val(),
@@ -22,9 +21,17 @@ App.Views.AddJob = Backbone.View.extend({
       interview: this.$("[name='interview']").val(),
       notes: this.$("[name=notes]").val()
     }
-    console.log(this);
     this.collection.create(formData)
+    this.emptyForm()
     $("#newJobForm").toggle()
-  }
+  },
 
+  emptyForm: function(){
+    $("[name='company']").val("")
+    $("[name='title']").val("")
+    $("[name='date_applied']").val("")
+    $("[name='date_replied']").val("")
+    $("[name='phone_interview']").val("")
+    $("[name='interview']").val("")
+  }
 })

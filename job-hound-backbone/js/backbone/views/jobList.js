@@ -23,5 +23,7 @@ App.Views.JobList = Backbone.View.extend({
 
   toggleForm: function(){
     $("#newJobForm").toggle()
-  }
+  },
+
+
 })

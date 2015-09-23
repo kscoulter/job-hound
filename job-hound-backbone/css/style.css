@@ -3,8 +3,17 @@
   margin: 0;
   padding: 0;
 }
+html {
+  position: relative;;
+  height: 100%;
+}
 body {
   background-color: papayawhip;
+  height: 100%;
+}
+nav h1 {
+  color: green;
+  padding-top: 5px;
 }
 nav {
   width: 100%;
@@ -12,7 +21,12 @@ nav {
   background-color: #0C0C0C;
 }
 main {
-  padding: 10px;
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+.active {
+  background-color: green;
 }
 .table-container {
   border: 2px solid #0C0C0C;
@@ -50,5 +64,40 @@ form {
   text-align: center;
 }
 #newJobForm{
+  display: none;
+}
+/*---------Documents Section------------*/
+.documents {
+  width: 40%;
+  height: 100%;
+  float: right;
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.documents-nav {
+  margin-top: 3px;
+}
+
+.documents-nav ul li{
+  display: inline;
+  border: 2px solid black;
+  border-bottom: none;
+  padding: 10px 10px 0 10px;
+  border-radius: 3px;
+}
+
+.document-text {
+  border: 2px solid;
+  height: 95%;
+  width: 100%;
+  background-color: white;
+}
+
+.plus {
+  background-color: green;
+}
+
+.documentsForm {
   display: none;
 }

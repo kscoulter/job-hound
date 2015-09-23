@@ -4,7 +4,8 @@ App.Views.Job = Backbone.View.extend({
 
   events: {
     'click .edit': 'renderEditForm',
-    'submit form': 'updateJob'
+    'submit form': 'updateJob',
+    'click'      : 'setActive'
   },
 
   initialize: function(){
@@ -35,5 +36,10 @@ App.Views.Job = Backbone.View.extend({
     }
     this.model.save(data)
   },
+
+  setActive: function(){
+    $("main").find(".active").removeClass("active")
+    this.$el.addClass("active");
+  }
 
 });

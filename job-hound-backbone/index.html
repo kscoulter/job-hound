@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Job Hound</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
@@ -14,14 +15,15 @@
     <script src="js/backbone/views/job.js"></script>
     <script src="js/backbone/views/jobList.js"></script>
     <script src="js/backbone/views/addJob.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="js/backbone/views/documentsView.js"></script>
+    <script src="js/backbone/views/appView.js"></script>
   </head>
   <body>
     <nav>
+      <h1>Applications You're Tracking</h1>
     </nav>
 
     <main>
-      <h1>Applications You're Tracking</h1>
       <div class="table-container">
         <div class="heading">
           <h1 class="col">Company</h1>
@@ -34,6 +36,18 @@
       </div>
 
       <div class="add">Add Job</div>
+
+      <script id="documentsForm" type="text/x-handlebars-template">
+        <form class="documentsForm">
+          <label for="resume">Resume</label>
+          <p><textarea name="resume" value="{{resume}}" rows="7" cols="70"></textarea></p>
+          <label for="cover_letter">Cover Letter</label>
+          <p><textarea name="cover_letter" value="{{cover_letter}}" rows="7" cols="70"></textarea></p>
+          <label for="questions">Questions To Ask</label>
+          <p>​<textarea name="questions" value="{{questions}}" rows="7" cols="70"></textarea></p>
+          <p><input type="submit"></p>
+        </form>
+      </script>
 
       <div id="newJobForm">
         <form>
@@ -52,11 +66,24 @@
           <p><label for="interview">Interview Date</label></p>
           <p><input type="date" name="interview"></p>
           <p><label for="notes">Notes</label></p>
-          <p><input type="textbox" name="notes" placeholder="They allow pets"></p>
+          <p><input type="textarea" name="notes" placeholder="They allow pets"></p>
           <p><input type="submit"></p>
         </form>
       </div>
     </main>
+    <div class="documents">
+      <div class="documents-nav">
+        <ul>
+          <li>Resume</li>
+          <li>Cover Letter</li>
+          <li>Questions</li>
+          <li class="plus">(+)</li>
+        </ul>
+      </div>
+      <div class="document-text">
+      </div>
+    </div>
+
 
     <script id="addJobTemplate" type="text/x-handlebars-template">
       </script>
