@@ -37,18 +37,6 @@
 
       <div class="add">Add Job</div>
 
-      <script id="documentsForm" type="text/x-handlebars-template">
-        <form class="documentsForm">
-          <label for="resume">Resume</label>
-          <p><textarea name="resume" value="{{resume}}" rows="7" cols="70"></textarea></p>
-          <label for="cover_letter">Cover Letter</label>
-          <p><textarea name="cover_letter" value="{{cover_letter}}" rows="7" cols="70"></textarea></p>
-          <label for="questions">Questions To Ask</label>
-          <p>​<textarea name="questions" value="{{questions}}" rows="7" cols="70"></textarea></p>
-          <p><input type="submit"></p>
-        </form>
-      </script>
-
       <div id="newJobForm">
         <form>
           <p><label for="company">Company</label></p>
@@ -74,9 +62,9 @@
     <div class="documents">
       <div class="documents-nav">
         <ul>
-          <li>Resume</li>
-          <li>Cover Letter</li>
-          <li>Questions</li>
+          <li class="resume">Resume</li>
+          <li class="cover_letter">Cover Letter</li>
+          <li class="questions">Questions</li>
           <li class="plus">(+)</li>
         </ul>
       </div>
@@ -84,35 +72,54 @@
       </div>
     </div>
 
+    <script id="resume-doc" type="text/x-handlebars-template">
+      <p>{{resume}}</p>
+    </script>
+    <script id="letter-doc" type="text/x-handlebars-template">
+      <p>{{cover_letter}}</p>
+    </script>
+    <script id="questions-doc" type="text/x-handlebars-template">
+      <p>{{questions}}</p>
+    </script>
+
+    <script id="documentsForm" type="text/x-handlebars-template">
+      <form class="documentsForm">
+        <label for="resume">Resume</label>
+        <p><textarea name="resume" value="{{resume}}" rows="7" cols="70"></textarea></p>
+        <label for="cover_letter">Cover Letter</label>
+        <p><textarea name="cover_letter" value="{{cover_letter}}" rows="7" cols="70"></textarea></p>
+        <label for="questions">Questions To Ask</label>
+        <p>​<textarea name="questions" value="{{questions}}" rows="7" cols="70"></textarea></p>
+        <p><input type="submit"></p>
+      </form>
+    </script>
 
     <script id="addJobTemplate" type="text/x-handlebars-template">
       </script>
 
 
     <script id="JobTemplate" type="text/x-handlebars-template">
-
-      <div class="col">
-        <p>{{company}}</p>
-      </div>
-      <div class="col">
-        <p>{{title}}</p>
-      </div>
-      <div class="col">
-        <p>{{date_applied}}</p>
-      </div>
-      <div class="col">
-        <p>{{date_replied}}</p>
-      </div>
-      <div class="col">
-        <p>{{phone_interview}}</p>
-      </div>
-      <div class="col">
-        <p>{{interview}}</p>
-      </div>
-      <div class="edit col">
-        <i class="fa fa-pencil"></i>
-      </div>
-
+        <div class="col" data-id="{{id}}">
+          <p>{{company}}</p>
+        </div>
+        <div class="col">
+          <p>{{title}}</p>
+        </div>
+        <div class="col">
+          <p>{{date_applied}}</p>
+        </div>
+        <div class="col">
+          <p>{{date_replied}}</p>
+        </div>
+        <div class="col">
+          <p>{{phone_interview}}</p>
+        </div>
+        <div class="col">
+          <p>{{interview}}</p>
+        </div>
+        <div class="edit col">
+          <i class="fa fa-pencil"></i>
+        </div>
     </script>
 
       <script id="JobEdit" type="text/x-handlebars-template">

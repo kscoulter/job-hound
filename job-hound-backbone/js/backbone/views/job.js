@@ -5,7 +5,7 @@ App.Views.Job = Backbone.View.extend({
   events: {
     'click .edit': 'renderEditForm',
     'submit form': 'updateJob',
-    'click'      : 'setActive'
+    'click'      : 'updateDocuments'
   },
 
   initialize: function(){
@@ -13,11 +13,11 @@ App.Views.Job = Backbone.View.extend({
     this.template = Handlebars.compile($("#JobTemplate").html());
     this.editTemplate = Handlebars.compile($("#JobEdit").html());
     this.render();
+    // $(".job:nth-child(2)").addClass("active")
   },
 
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
-    // this.model.save({title: "bruh"})
   },
 
   renderEditForm: function(){
@@ -40,6 +40,11 @@ App.Views.Job = Backbone.View.extend({
   setActive: function(){
     $("main").find(".active").removeClass("active")
     this.$el.addClass("active");
+  },
+
+  updateDocuments: function(){
+    this.setActive();
+    App.Views.doc.setDocument(this.model)
   }
 
 });

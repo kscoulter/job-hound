@@ -6,7 +6,6 @@ App.Views.JobList = Backbone.View.extend({
   },
 
   initialize: function(){
-    console.log("job list initialized");
     this.listenTo(this.collection, 'reset', this.renderAll);
     this.listenTo(this.collection, 'add', this.renderOne);
   },
@@ -23,7 +22,7 @@ App.Views.JobList = Backbone.View.extend({
 
   toggleForm: function(){
     $("#newJobForm").toggle()
-  },
+  }
 
 
 })

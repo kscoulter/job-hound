@@ -3,7 +3,10 @@ App.Views.DocumentsView = Backbone.View.extend({
 
   events: {
     'click .plus': 'showForm',
-    'submit form': 'submitForm'
+    'submit form': 'submitForm',
+    'click .resume': 'renderResume',
+    'click .cover_letter': 'displayCoverLetter',
+    'click .questions': 'displayQuestions'
   },
 
   initialize: function(){
@@ -18,13 +21,13 @@ App.Views.DocumentsView = Backbone.View.extend({
 
   submitForm: function() {
     event.preventDefault();
+    var id = $(".active .col:first-child").attr("data-id")
     var data = {
       resume: this.$("[name='resume']").val(),
       cover_letter: this.$("[name='cover_letter']").val(),
       questions: this.$("[name='questions']").val()
     }
-    console.log(this.model);
-    this.model.save(data)
+    this.collection.get(id).save(data)
     this.emptyForm()
     $(".documentsForm").hide()
   },
@@ -33,6 +36,29 @@ App.Views.DocumentsView = Backbone.View.extend({
     $("[name='resume']").val("")
     $("[name='cover_letter']").val("")
     $("[name='questions']").val("")
+  },
+
+  setDocument: function(job){
+    this.model = job
+    this.renderResume();
+  },
+
+  renderResume: function() {
+    this.$(".document-text").empty()
+    this.docTemplate = Handlebars.compile($("#resume-doc").html());
+    this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
+  },
+
+  displayCoverLetter: function(){
+    this.$(".document-text").empty()
+    this.docTemplate = Handlebars.compile($("#letter-doc").html());
+    this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
+  },
+
+  displayQuestions: function(){
+    this.$(".document-text").empty()
+    this.docTemplate = Handlebars.compile($("#questions-doc").html());
+    this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
   }
 
 })

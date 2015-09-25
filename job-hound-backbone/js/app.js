@@ -11,6 +11,7 @@ $(document).ready(function(){
   jobs.fetch()
 
   new App.Views.AddJob({collection: jobs})
-  new App.Views.DocumentsView({collection: jobs})
+  App.Views.doc = new App.Views.DocumentsView({collection: jobs})
   new App.Views.AppView({collection: jobs})
+
 });
