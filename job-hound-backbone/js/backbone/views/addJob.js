@@ -3,7 +3,7 @@ App.Views.AddJob = Backbone.View.extend({
 
   events: {
     'submit form': 'submitForm',
-    // 'click .overlay': 'closeForm'
+    'keydown': 'closeForm'
   },
 
   initialize: function(){
@@ -11,10 +11,14 @@ App.Views.AddJob = Backbone.View.extend({
     this.$el.append(this.template)
   },
 
-  // closeForm: function(){
-  //   alert("yay!")
-  //   this.$el.hide();
-  // },
+  closeForm: function(event){
+    if (event.keyCode === 27){
+      this.$el.hide();
+    }
+    else if (event.keyCode === 13) {
+      this.submitForm();
+    }
+  },
 
   submitForm: function(){
     event.preventDefault();
