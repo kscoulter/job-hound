@@ -8,6 +8,7 @@ html {
   height: 100%;
 }
 body {
+  position: relative;
   background-color: papayawhip;
   height: 100%;
 }
@@ -31,11 +32,6 @@ main {
 .table-container {
   border: 2px solid #0C0C0C;
   display: table;
-  /*display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  font-size: 15px;*/
 }
 .heading {
   display: table-row;
@@ -44,6 +40,9 @@ main {
 }
 .job {
   display: table-row;
+}
+.job:hover {
+  cursor: pointer;
 }
 .col {
   display: table-cell;
@@ -63,9 +62,33 @@ form {
   border-radius: 5px;
   text-align: center;
 }
-#newJobForm{
+.overlay{
   display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+#newJobForm{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#newJobForm form {
+  height: 100%;
+  width: 700px;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  border: 2px solid;
+  background-color: #FAFAFA;
+  z-index: 100;
+}
+
 /*---------Documents Section------------*/
 .documents {
   width: 40%;
@@ -86,7 +109,9 @@ form {
   padding: 10px 10px 0 10px;
   border-radius: 3px;
 }
-
+.documents-nav ul li:hover {
+  cursor: pointer;
+}
 .document-text {
   border: 2px solid;
   height: 95%;
@@ -96,8 +121,4 @@ form {
 
 .plus {
   background-color: green;
-}
-
-.documentsForm {
-  display: none;
 }

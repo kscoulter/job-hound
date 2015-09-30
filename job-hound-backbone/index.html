@@ -37,28 +37,30 @@
 
       <div class="add">Add Job</div>
 
-      <div id="newJobForm">
-        <form>
-          <p><label for="company">Company</label></p>
-          <p><input type="text" name="company" placeholder="Monster's Inc."></p>
-          <p><label for="title">Title</label></p>
-          <p><input type="text" name="title" placeholder="Intern"></p>
-          <p><label for="link">Link to Application</label></p>
-          <p><input type="text" name="link" placeholder="http://"></p>
-          <p><label for="date_applied">Date Applied</label></p>
-          <p><input type="date" name="date_applied"></p>
-          <p><label for="date_replied">Date Heard Back</label></p>
-          <p><input type="date" name="date_replied"></p>
-          <p><label for="phone_interview">Phone Interview Date</label></p>
-          <p><input type="date" name="phone_interview"></p>
-          <p><label for="interview">Interview Date</label></p>
-          <p><input type="date" name="interview"></p>
-          <p><label for="notes">Notes</label></p>
-          <p><input type="textarea" name="notes" placeholder="They allow pets"></p>
-          <p><input type="submit"></p>
-        </form>
-      </div>
     </main>
+      <div class="overlay">
+        <div id="newJobForm">
+          <form>
+            <p><label for="company">Company</label></p>
+            <p><input type="text" name="company" placeholder="Monster's Inc."></p>
+            <p><label for="title">Title</label></p>
+            <p><input type="text" name="title" placeholder="Intern"></p>
+            <p><label for="link">Link to Application</label></p>
+            <p><input type="text" name="link" placeholder="http://"></p>
+            <p><label for="date_applied">Date Applied</label></p>
+            <p><input type="date" name="date_applied"></p>
+            <p><label for="date_replied">Date Heard Back</label></p>
+            <p><input type="date" name="date_replied"></p>
+            <p><label for="phone_interview">Phone Interview Date</label></p>
+            <p><input type="date" name="phone_interview"></p>
+            <p><label for="interview">Interview Date</label></p>
+            <p><input type="date" name="interview"></p>
+            <p><label for="notes">Notes</label></p>
+            <p><input type="textarea" name="notes" placeholder="They allow pets"></p>
+            <p><input type="submit"></p>
+          </form>
+        </div>
+      </div>
     <div class="documents">
       <div class="documents-nav">
         <ul>
@@ -85,11 +87,11 @@
     <script id="documentsForm" type="text/x-handlebars-template">
       <form class="documentsForm">
         <label for="resume">Resume</label>
-        <p><textarea name="resume" value="{{resume}}" rows="7" cols="70"></textarea></p>
+        <p><textarea name="resume"rows="7" cols="70">{{resume}}</textarea></p>
         <label for="cover_letter">Cover Letter</label>
-        <p><textarea name="cover_letter" value="{{cover_letter}}" rows="7" cols="70"></textarea></p>
+        <p><textarea name="cover_letter"rows="7" cols="70">{{cover_letter}}</textarea></p>
         <label for="questions">Questions To Ask</label>
-        <p>​<textarea name="questions" value="{{questions}}" rows="7" cols="70"></textarea></p>
+        <p>​<textarea name="questions" rows="7" cols="70">{{questions}}</textarea></p>
         <p><input type="submit"></p>
       </form>
     </script>

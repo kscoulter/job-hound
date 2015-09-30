@@ -11,12 +11,12 @@ App.Views.DocumentsView = Backbone.View.extend({
 
   initialize: function(){
     console.log("DocumentsView initialized");
-    this.formTemplate = Handlebars.compile($("#documentsForm").html());
-    this.$(".document-text").append(this.formTemplate)
   },
 
   showForm: function() {
-    $(".documentsForm").show()
+    console.log("you clicked plus");
+    this.formTemplate = Handlebars.compile($("#documentsForm").html());
+    this.$(".document-text").html(this.formTemplate(this.model.toJSON()));
   },
 
   submitForm: function() {
