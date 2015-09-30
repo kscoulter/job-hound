@@ -14,7 +14,6 @@ App.Views.DocumentsView = Backbone.View.extend({
   },
 
   showForm: function() {
-    console.log("you clicked plus");
     this.formTemplate = Handlebars.compile($("#documentsForm").html());
     this.$(".document-text").html(this.formTemplate(this.model.toJSON()));
   },
@@ -43,22 +42,33 @@ App.Views.DocumentsView = Backbone.View.extend({
     this.renderResume();
   },
 
+  removeActive: function(){
+    $(".documents").find(".active").removeClass("active")
+    // this.$el.addClass("active");
+  },
+
   renderResume: function() {
     this.$(".document-text").empty()
     this.docTemplate = Handlebars.compile($("#resume-doc").html());
     this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
+    this.removeActive()
+    $(".resume").addClass("active")
   },
 
   displayCoverLetter: function(){
     this.$(".document-text").empty()
     this.docTemplate = Handlebars.compile($("#letter-doc").html());
     this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
+    this.removeActive()
+    $(".cover_letter").addClass("active")
   },
 
   displayQuestions: function(){
     this.$(".document-text").empty()
     this.docTemplate = Handlebars.compile($("#questions-doc").html());
     this.$(".document-text").append(this.docTemplate(this.model.toJSON()));
+    this.removeActive()
+    $(".questions").addClass("active")
   }
 
 })

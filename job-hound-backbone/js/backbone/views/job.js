@@ -3,9 +3,10 @@ App.Views.Job = Backbone.View.extend({
   tagName: 'div',
 
   events: {
-    'click .edit': 'renderEditForm',
-    'submit form': 'updateJob',
-    'click'      : 'updateDocuments'
+    'click .delete': 'deleteJob',
+    'click .edit':   'renderEditForm',
+    'submit form':   'updateJob',
+    'click'      :   'updateDocuments'
   },
 
   initialize: function(){
@@ -18,6 +19,15 @@ App.Views.Job = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
+  },
+
+  deleteJob: function(){
+    var confirm = window.confirm("The deletion is permanent. Do you want to proceed?")
+    if (confirm) {
+      var self = this;
+      self.model.destroy();
+      self.$el.fadeOut(function() { self.$el.remove(); });
+    }
   },
 
   renderEditForm: function(){
@@ -40,6 +50,7 @@ App.Views.Job = Backbone.View.extend({
   setActive: function(){
     $("main").find(".active").removeClass("active")
     this.$el.addClass("active");
+    $(".resume").addClass("active");
   },
 
   updateDocuments: function(){
