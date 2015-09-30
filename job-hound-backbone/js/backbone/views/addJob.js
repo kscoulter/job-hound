@@ -1,14 +1,20 @@
 App.Views.AddJob = Backbone.View.extend({
-  el: "#newJobForm",
+  el: ".overlay",
 
   events: {
-    'submit form': 'submitForm'
+    'submit form': 'submitForm',
+    // 'click .overlay': 'closeForm'
   },
 
   initialize: function(){
     this.template = Handlebars.compile($("#addJobTemplate").html())
     this.$el.append(this.template)
   },
+
+  // closeForm: function(){
+  //   alert("yay!")
+  //   this.$el.hide();
+  // },
 
   submitForm: function(){
     event.preventDefault();
