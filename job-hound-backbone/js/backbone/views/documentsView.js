@@ -10,7 +10,7 @@ App.Views.DocumentsView = Backbone.View.extend({
   },
 
   initialize: function(){
-    console.log("DocumentsView initialized");
+    
   },
 
   showForm: function() {

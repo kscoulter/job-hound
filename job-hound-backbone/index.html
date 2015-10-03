@@ -41,23 +41,74 @@
       <div class="overlay">
         <div id="newJobForm">
           <form>
-            <p><label for="company">Company</label></p>
-            <p><input type="text" required="required" name="company" placeholder="Monster's Inc."></p>
-            <p><label for="title">Title</label></p>
-            <p><input type="text" name="title" placeholder="Intern"></p>
-            <p><label for="link">Link to Application</label></p>
-            <p><input type="text" name="link" placeholder="http://"></p>
-            <p><label for="date_applied">Date Applied</label></p>
-            <p><input type="date" name="date_applied"></p>
-            <p><label for="date_replied">Date Heard Back</label></p>
-            <p><input type="date" name="date_replied"></p>
-            <p><label for="phone_interview">Phone Interview Date</label></p>
-            <p><input type="date" name="phone_interview"></p>
-            <p><label for="interview">Interview Date</label></p>
-            <p><input type="date" name="interview"></p>
-            <p><label for="notes">Notes</label></p>
-            <p><input type="textarea" name="notes" placeholder="They allow pets"></p>
-            <p><input type="submit"></p>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="company">Company</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="text" required="required" name="company" placeholder="Monster's Inc." autofocus />
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="title">Title</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="text" name="title" placeholder="Intern">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="link">Link to Application</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="text" name="link" placeholder="http://">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="date_applied">Date Applied</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="date" name="date_applied">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="date_replied">Date Heard Back</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="date" name="date_replied">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="phone_interview">Phone Interview Date</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="date" name="phone_interview">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="interview">Interview Date</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="date" name="interview">
+              </dd>
+            </dl>
+            <dl>
+              <dt class="form form-title">
+                <label class="form form-label" for="notes">Notes</label>
+              </dt>
+              <dd class="form form-definition">
+                <input class="form form-input" type="textarea" name="notes" placeholder="They allow pets">
+              </dd>
+            </dl>
+            <div class="form form-buttons">
+              <span class="form form-cancel">Cancel</span>
+              <input class="form form-submit" type="submit">
+            </div
           </form>
         </div>
       </div>
@@ -87,11 +138,11 @@
     <script id="documentsForm" type="text/x-handlebars-template">
       <form class="documentsForm">
         <label for="resume">Resume</label>
-        <p><textarea name="resume"rows="7" cols="70">{{resume}}</textarea></p>
+        <p><textarea name="resume"rows="6" cols="70" autofocus>{{resume}}</textarea></p>
         <label for="cover_letter">Cover Letter</label>
-        <p><textarea name="cover_letter"rows="7" cols="70">{{cover_letter}}</textarea></p>
+        <p><textarea name="cover_letter"rows="6" cols="70">{{cover_letter}}</textarea></p>
         <label for="questions">Questions To Ask</label>
-        <p>​<textarea name="questions" rows="7" cols="70">{{questions}}</textarea></p>
+        <p>​<textarea name="questions" rows="6" cols="70">{{questions}}</textarea></p>
         <p><input type="submit"></p>
       </form>
     </script>

@@ -14,7 +14,8 @@ App.Views.Job = Backbone.View.extend({
     this.template = Handlebars.compile($("#JobTemplate").html());
     this.editTemplate = Handlebars.compile($("#JobEdit").html());
     this.render();
-    // $(".job:nth-child(2)").addClass("active")
+    $(".job:nth-child(2)").addClass("active");
+    App.Views.doc.setDocument(jobs.models[0]);
   },
 
   render: function(){
